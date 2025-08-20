@@ -15,10 +15,18 @@ public class CambioModoAvion extends BroadcastReceiver {
 
             if (modoAvion) {
                 Toast.makeText(context, "Modo avión activado", Toast.LENGTH_SHORT).show();
-                realizarLlamada(context);
-            } else {
-                Toast.makeText(context, "Modo avión desactivado", Toast.LENGTH_SHORT).show();
+
+                Intent callIntent = new Intent(Intent.ACTION_DIAL);
+                callIntent.setData(Uri.parse("tel:2664553747"));
+                callIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(callIntent);
             }
+//            if (modoAvion) {
+//                Toast.makeText(context, "Modo avión activado", Toast.LENGTH_SHORT).show();
+//                realizarLlamada(context);
+//            } else {
+//                Toast.makeText(context, "Modo avión desactivado", Toast.LENGTH_SHORT).show();
+//            }
         }
     }
 

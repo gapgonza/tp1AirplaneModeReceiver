@@ -22,7 +22,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void registrarBroadcastModoAvion() {
         cma = new CambioModoAvion();
-        IntentFilter intentFilter = new IntentFilter("android.intent.action.AIRPLANE_MODE");
+        IntentFilter intentFilter = new IntentFilter(Intent.ACTION_AIRPLANE_MODE_CHANGED);
+        //IntentFilter intentFilter = new IntentFilter("android.intent.action.AIRPLANE_MODE");
         registerReceiver(cma, intentFilter);
     }
 
